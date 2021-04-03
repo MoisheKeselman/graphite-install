@@ -1,0 +1,11 @@
+[Unit]
+Description=Graphite Webapp and dashboard
+
+[Service]
+Type=simple
+Environment="PYTHONPATH=/opt/graphite/storage/whisper"
+ExecStart=sudo /opt/graphite/bin/run-graphite-devel-server.py --port=8080 --libs=/opt/graphite/webapp /opt/graphite
+
+[Install]
+WantedBy=multi-user.target
+
